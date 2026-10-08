@@ -1,30 +1,23 @@
 # keycloak-logistics-auth-web
 Repository to register activities executed for the Keycloak implementation in a web solution for Logistics Traceability
 
-Analysis
-  -Documentation of Users and permissions required for web solution
+### 1. Requirements & Analysis
+- Documented user roles, access matrices, and authorization requirements for the web application.
 
-Configured EC2 instance and Security Group
-  -Created AWS EC2 Instance and set Inbound ports and Protocols
-  -Connected domain required to EC2 IP.
+### 2. Infrastructure Setup (AWS EC2)
+- Provisioned an AWS EC2 instance and configured Security Groups with strict inbound/outbound traffic rules.
+- Linked the custom domain to the EC2 public IP via DNS records.
 
-Keycloak Deployment
-  -Installed Docker 
-  -Define Keycloak implementation and Database connection
+### 3. Keycloak Deployment
+- Set up Docker environment on the EC2 instance for container management.
+- Deployed Keycloak and configured persistent database connectivity.
 
-Keycloak Console
-  -Realm creation
-  -Client creation
+### 4. IAM & Keycloak Configuration
+- Created and configured the application Realm and OIDC Client settings.
+- Managed user accounts, created Realm roles, and assigned granular permissions.
+- Defined fine-grained authorization policies for client access control.
 
-Authorization Management Console
-  -Required Users creation
-  -Realm roles creation and configuration
-  -Roles Assignation to Client's Users
-  -Policies creation
-
-Authentication Testing
-  -Login, Secure Redirection and Logout
-  -Standard User roles and permissions
-  -Admin User roles and permissions
-
-JWT Token Inspection and Validation
+### 5. Testing & Validation
+- Validated end-to-end authentication flows (Login, Logout, and Secure Redirections).
+- Verified Role-Based Access Control (RBAC) enforcement for both Standard and Admin roles.
+- Inspected JWT tokens to validate payload integrity, claims, and signature expiration.
